@@ -72,7 +72,8 @@ const ftx = {
   needsBearerToken: true,
 };
 
-const swapProviders: Record<string, SwapProviderConfig> = {
+// TODO we need a separate list of CEX and DEX provider lists as they work differently
+const swapCexProviders: Record<string, SwapProviderConfig> = {
   changelly: {
     nameAndPubkey: getNameAndPubKey(
       "Changelly",
@@ -131,7 +132,7 @@ const swapProviders: Record<string, SwapProviderConfig> = {
 };
 
 const getProviderConfig = (providerName: string): SwapProviderConfig => {
-  const res = swapProviders[providerName.toLowerCase()];
+  const res = swapCexProviders[providerName.toLowerCase()];
 
   if (!res) {
     throw new Error(`Unknown partner ${providerName}`);
@@ -140,7 +141,8 @@ const getProviderConfig = (providerName: string): SwapProviderConfig => {
   return res;
 };
 
-export const getAvailableProviders = (): string[] => Object.keys(swapProviders);
+export const getAvailableProviders = (): string[] =>
+  Object.keys(swapCexProviders);
 
 const USStates = {
   AL: "Alabama",
