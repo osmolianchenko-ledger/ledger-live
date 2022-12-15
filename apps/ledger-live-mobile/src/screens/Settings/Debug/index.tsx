@@ -47,6 +47,7 @@ import { SettingsNavigatorStackParamList } from "../../../components/RootNavigat
 import PoweredByLedger from "../PoweredByLedger";
 import OpenStoryly from "./OpenDebugStoryly";
 import OpenDebugCustomImageGraphics from "./OpenDebugCustomImageGraphics";
+import { groupedFeatures } from "@ledgerhq/live-common/featureFlags/groupedFeatures";
 
 export function DebugMocks() {
   return (
@@ -129,15 +130,7 @@ export default function DebugSettings({
   const { getFeature, overrideFeature } = useFeatureFlags();
 
   const ruleThemAll = useCallback(() => {
-    (
-      [
-        "customImage",
-        "deviceInitialApps",
-        "syncOnboarding",
-        "llmNewDeviceSelection",
-        "staxWelcomeScreen",
-      ] as FeatureId[]
-    ).forEach(featureId =>
+    groupedFeatures.stax.featureIds.forEach(featureId =>
       overrideFeature(featureId, { ...getFeature(featureId), enabled: true }),
     );
     Alert.alert(
