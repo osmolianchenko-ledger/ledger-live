@@ -71,7 +71,6 @@ import {
   SettingsSetDismissedDynamicCardsPayload,
   SettingsSetOverriddenFeatureFlagPlayload,
   SettingsSetOverriddenFeatureFlagsPlayload,
-  SettingsSetFeatureFlagsBannerVisible,
   SettingsSetFeatureFlagsBannerVisiblePayload,
 } from "./types";
 import { WalletTabNavigatorStackParamList } from "../components/RootNavigator/types/WalletTabNavigator";
