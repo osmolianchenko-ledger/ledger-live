@@ -278,6 +278,7 @@ export enum SettingsActionTypes {
   WALLET_TAB_NAVIGATOR_LAST_VISITED_TAB = "WALLET_TAB_NAVIGATOR_LAST_VISITED_TAB",
   SET_OVERRIDDEN_FEATURE_FLAG = "SET_OVERRIDDEN_FEATURE_FLAG",
   SET_OVERRIDDEN_FEATURE_FLAGS = "SET_OVERRIDDEN_FEATURE_FLAGS",
+  SET_FEATURE_FLAGS_BANNER_VISIBLE = "SET_FEATURE_FLAGS_BANNER_VISIBLE",
 }
 
 export type SettingsImportPayload = Partial<SettingsState>;
@@ -436,6 +437,10 @@ export type SettingsSetOverriddenFeatureFlagsPlayload = Pick<
   SettingsState,
   "overriddenFeatureFlags"
 >;
+export type SettingsSetFeatureFlagsBannerVisiblePayload = Pick<
+  SettingsState,
+  "featureFlagsBannerVisible"
+>;
 export type SettingsPayload =
   | SettingsImportPayload
   | SettingsImportDesktopPayload
@@ -482,7 +487,8 @@ export type SettingsPayload =
   | SettingsSetNotificationsPayload
   | SettingsDangerouslyOverrideStatePayload
   | SettingsSetOverriddenFeatureFlagPlayload
-  | SettingsSetOverriddenFeatureFlagsPlayload;
+  | SettingsSetOverriddenFeatureFlagsPlayload
+  | SettingsSetFeatureFlagsBannerVisiblePayload;
 
 // === WALLET CONNECT ACTIONS ===
 

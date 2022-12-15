@@ -214,6 +214,7 @@ export type SettingsState = {
   notifications: NotificationsSettings;
   walletTabNavigatorLastVisitedTab: keyof WalletTabNavigatorStackParamList;
   overriddenFeatureFlags: { [key in FeatureId]?: Feature | undefined };
+  featureFlagsBannerVisible: boolean;
 };
 
 export type NotificationsSettings = {
