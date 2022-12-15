@@ -5,7 +5,7 @@ import { Box, Text } from "@ledgerhq/native-ui";
 import { Device } from "@ledgerhq/live-common/hw/actions/types";
 import { Alert, TouchableWithoutFeedback, View } from "react-native";
 import { useFeatureFlags } from "@ledgerhq/live-common/featureFlags/provider";
-import { FeatureId } from "@ledgerhq/types-live";
+import { groupedFeatures } from "@ledgerhq/live-common/featureFlags/groupedFeatures";
 import { TrackScreen } from "../../../analytics";
 import SettingsRow from "../../../components/SettingsRow";
 import SelectDevice from "../../../components/SelectDevice";
@@ -47,7 +47,6 @@ import { SettingsNavigatorStackParamList } from "../../../components/RootNavigat
 import PoweredByLedger from "../PoweredByLedger";
 import OpenStoryly from "./OpenDebugStoryly";
 import OpenDebugCustomImageGraphics from "./OpenDebugCustomImageGraphics";
-import { groupedFeatures } from "@ledgerhq/live-common/featureFlags/groupedFeatures";
 
 export function DebugMocks() {
   return (
