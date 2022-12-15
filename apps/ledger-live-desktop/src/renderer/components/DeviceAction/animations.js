@@ -68,28 +68,15 @@ import BLUE_LIGHT_validate from "~/renderer/animations/blue/7Validate/data.json"
 
 // NANO FTS
 
-import NANO_FTS_LIGHT_plugAndPinCode from "~/renderer/animations/nanoFTS/1PlugAndPinCode/light.json";
-import NANO_FTS_DARK_plugAndPinCode from "~/renderer/animations/nanoFTS/1PlugAndPinCode/dark.json";
-import NANO_FTS_LIGHT_enterPinCode from "~/renderer/animations/nanoFTS/3EnterPinCode/light.json";
-import NANO_FTS_DARK_enterPinCode from "~/renderer/animations/nanoFTS/3EnterPinCode/dark.json";
-import NANO_FTS_LIGHT_quitApp from "~/renderer/animations/nanoFTS/4QuitApp/light.json";
-import NANO_FTS_DARK_quitApp from "~/renderer/animations/nanoFTS/4QuitApp/dark.json";
-import NANO_FTS_LIGHT_allowManager from "~/renderer/animations/nanoFTS/5AllowManager/light.json";
-import NANO_FTS_DARK_allowManager from "~/renderer/animations/nanoFTS/5AllowManager/dark.json";
-import NANO_FTS_LIGHT_openApp from "~/renderer/animations/nanoFTS/6OpenApp/light.json";
-import NANO_FTS_DARK_openApp from "~/renderer/animations/nanoFTS/6OpenApp/dark.json";
-import NANO_FTS_LIGHT_validate from "~/renderer/animations/nanoFTS/7Validate/light.json";
-import NANO_FTS_DARK_validate from "~/renderer/animations/nanoFTS/7Validate/dark.json";
-import NANO_FTS_LIGHT_firmwareUpdating from "~/renderer/animations/nanoFTS/2FirmwareUpdating/light.json";
-import NANO_FTS_DARK_firmwareUpdating from "~/renderer/animations/nanoFTS/2FirmwareUpdating/dark.json";
-import NANO_FTS_LIGHT_installLoading from "~/renderer/animations/nanoFTS/8InstallLoading/light.json";
-import NANO_FTS_DARK_installLoading from "~/renderer/animations/nanoFTS/8InstallLoading/dark.json";
-import NANO_FTS_LIGHT_pairingProgress from "~/renderer/animations/nanoFTS/9PairingProgress/light.json";
-import NANO_FTS_DARK_pairingProgress from "~/renderer/animations/nanoFTS/9PairingProgress/dark.json";
-import NANO_FTS_LIGHT_pairingSuccess from "~/renderer/animations/nanoFTS/10PairingSuccess/light.json";
-import NANO_FTS_DARK_pairingSuccess from "~/renderer/animations/nanoFTS/10PairingSuccess/dark.json";
-import NANO_FTS_LIGHT_placeHolder from "~/renderer/animations/nanoFTS/11PlaceHolder/light.json";
-import NANO_FTS_DARK_placeHolder from "~/renderer/animations/nanoFTS/11PlaceHolder/dark.json";
+import NANO_FTS_plugAndPinCode from "~/renderer/animations/nanoFTS/enterPIN.json";
+import NANO_FTS_enterPinCode from "~/renderer/animations/nanoFTS/enterPIN.json";
+import NANO_FTS_quitApp from "~/renderer/animations/nanoFTS/allowConnection.json";
+import NANO_FTS_allowManager from "~/renderer/animations/nanoFTS/allowConnection.json";
+import NANO_FTS_openApp from "~/renderer/animations/nanoFTS/allowConnection.json";
+import NANO_FTS_verify from "~/renderer/animations/nanoFTS/verifyAddress.json";
+import NANO_FTS_sign from "~/renderer/animations/nanoFTS/signTransaction.json";
+import NANO_FTS_firmwareUpdating from "~/renderer/animations/nanoFTS/allowConnection.json";
+import NANO_FTS_installLoading from "~/renderer/animations/nanoFTS/allowConnection.json";
 
 /* eslint-enable camelcase */
 
@@ -114,7 +101,11 @@ const nanoS = {
     light: NANO_S_LIGHT_openApp,
     dark: NANO_S_DARK_openApp,
   },
-  validate: {
+  verify: {
+    light: NANO_S_LIGHT_validate,
+    dark: NANO_S_DARK_validate,
+  },
+  sign: {
     light: NANO_S_LIGHT_validate,
     dark: NANO_S_DARK_validate,
   },
@@ -148,7 +139,11 @@ const nanoX = {
     light: NANO_X_LIGHT_openApp,
     dark: NANO_X_DARK_openApp,
   },
-  validate: {
+  verify: {
+    light: NANO_X_LIGHT_validate,
+    dark: NANO_X_DARK_validate,
+  },
+  sign: {
     light: NANO_X_LIGHT_validate,
     dark: NANO_X_DARK_validate,
   },
@@ -183,7 +178,11 @@ const nanoSP = {
     light: NANO_SP_LIGHT_openApp,
     dark: NANO_SP_DARK_openApp,
   },
-  validate: {
+  verify: {
+    light: NANO_SP_LIGHT_validate,
+    dark: NANO_SP_DARK_validate,
+  },
+  sign: {
     light: NANO_SP_LIGHT_validate,
     dark: NANO_SP_DARK_validate,
   },
@@ -199,48 +198,40 @@ const nanoSP = {
 
 const nanoFTS = {
   plugAndPinCode: {
-    light: NANO_FTS_LIGHT_plugAndPinCode,
-    dark: NANO_FTS_DARK_plugAndPinCode,
+    light: NANO_FTS_plugAndPinCode,
+    dark: NANO_FTS_plugAndPinCode,
   },
   enterPinCode: {
-    light: NANO_FTS_LIGHT_enterPinCode,
-    dark: NANO_FTS_DARK_enterPinCode,
+    light: NANO_FTS_enterPinCode,
+    dark: NANO_FTS_enterPinCode,
   },
   quitApp: {
-    light: NANO_FTS_LIGHT_quitApp,
-    dark: NANO_FTS_DARK_quitApp,
+    light: NANO_FTS_quitApp,
+    dark: NANO_FTS_quitApp,
   },
   allowManager: {
-    light: NANO_FTS_LIGHT_allowManager,
-    dark: NANO_FTS_DARK_allowManager,
+    light: NANO_FTS_allowManager,
+    dark: NANO_FTS_allowManager,
   },
   openApp: {
-    light: NANO_FTS_LIGHT_openApp,
-    dark: NANO_FTS_DARK_openApp,
+    light: NANO_FTS_openApp,
+    dark: NANO_FTS_openApp,
   },
-  validate: {
-    light: NANO_FTS_LIGHT_validate,
-    dark: NANO_FTS_DARK_validate,
+  verify: {
+    light: NANO_FTS_verify,
+    dark: NANO_FTS_verify,
+  },
+  sign: {
+    light: NANO_FTS_sign,
+    dark: NANO_FTS_sign,
   },
   firmwareUpdating: {
-    light: NANO_FTS_LIGHT_firmwareUpdating,
-    dark: NANO_FTS_DARK_firmwareUpdating,
+    light: NANO_FTS_firmwareUpdating,
+    dark: NANO_FTS_firmwareUpdating,
   },
   installLoading: {
-    light: NANO_FTS_LIGHT_installLoading,
-    dark: NANO_FTS_DARK_installLoading,
-  },
-  pairingProgress: {
-    light: NANO_FTS_LIGHT_pairingProgress,
-    dark: NANO_FTS_DARK_pairingProgress,
-  },
-  pairingSuccess: {
-    light: NANO_FTS_LIGHT_pairingSuccess,
-    dark: NANO_FTS_DARK_pairingSuccess,
-  },
-  placeHolder: {
-    light: NANO_FTS_LIGHT_placeHolder,
-    dark: NANO_FTS_DARK_placeHolder,
+    light: NANO_FTS_installLoading,
+    dark: NANO_FTS_installLoading,
   },
 };
 
@@ -260,7 +251,10 @@ const blue = {
   openApp: {
     light: BLUE_LIGHT_openApp,
   },
-  validate: {
+  verify: {
+    light: BLUE_LIGHT_validate,
+  },
+  sign: {
     light: BLUE_LIGHT_validate,
   },
   // Nb We are dropping the assets for blue soon, this is temp
