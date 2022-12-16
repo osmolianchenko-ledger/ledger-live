@@ -126,16 +126,16 @@ export const start = async (
   const { user, created } = await getOrCreateUser();
   storeInstance = store;
 
-  if (created && ANALYTICS_LOGS) {
-    console.log("analytics:identify", user.id);
-  }
+  // if (created && ANALYTICS_LOGS) {
+  //   console.log("analytics:identify", user.id);
+  // }
 
   console.log("START ANALYTICS", ANALYTICS_LOGS);
   const userExtraProperties = await extraProperties(store);
   if (token) {
     segmentClient = createClient({
       writeKey: token,
-      debug: !!ANALYTICS_LOGS,
+      debug: false, // !!ANALYTICS_LOGS,
     });
     // This allows us to not retrieve users ip addresses for privacy reasons
     segmentClient.add({ plugin: new AnonymousIpPlugin() });
@@ -160,12 +160,12 @@ export const updateIdentify = async () => {
   }
 
   const userExtraProperties = await extraProperties(storeInstance);
-  if (ANALYTICS_LOGS) console.log("analytics:identify", userExtraProperties);
+  // if (ANALYTICS_LOGS) console.log("analytics:identify", userExtraProperties);
   if (!token) return;
   segmentClient?.identify(userExtraProperties.userId, userExtraProperties);
 };
 export const stop = () => {
-  if (ANALYTICS_LOGS) console.log("analytics:stop");
+  // if (ANALYTICS_LOGS) console.log("analytics:stop");
   storeInstance = null;
 };
 export const trackSubject = new ReplaySubject<{
@@ -205,7 +205,7 @@ export const track = async (
     ...userExtraProperties,
     ...properties,
   };
-  if (ANALYTICS_LOGS) console.log("analytics:track", event, allProperties);
+  if (ANALYTICS_LOGS) console.log("analytics:track", event, JSON.stringify(allProperties, null, 2));
   trackSubject.next({
     event,
     properties: allProperties,
@@ -290,7 +290,7 @@ export const screen = async (
     ...properties,
   };
   if (ANALYTICS_LOGS)
-    console.log("analytics:screen", category, name, allProperties);
+    console.log("analytics:screen", category, name, JSON.stringify(allProperties, null, 2));
   trackSubject.next({
     event: title,
     properties: allProperties,

@@ -136,7 +136,6 @@ function PostWelcomeSelection({ route }: NavigationProps) {
           category="Onboarding"
           name={userHasDevice ? "Choice With Device" : "Choice No Device"}
         />
-        <TrackScreen category="Onboarding" name="SelectDevice" />
         <Text variant="h4" fontWeight="semiBold" mb={3}>
           {t("onboarding.postWelcomeStep.title")}
         </Text>

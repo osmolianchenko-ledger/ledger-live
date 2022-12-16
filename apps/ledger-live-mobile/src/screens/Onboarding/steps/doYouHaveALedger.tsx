@@ -13,6 +13,7 @@ import { setFirstConnectionHasDevice } from "../../../actions/settings";
 import { AnalyticsContext } from "../../../analytics/AnalyticsContext";
 import { StackNavigatorProps } from "../../../components/RootNavigator/types/helpers";
 import { OnboardingNavigatorParamList } from "../../../components/RootNavigator/types/OnboardingNavigator";
+import { useCurrentRouteName, usePreviousRouteName } from "../../../helpers/routeHooks";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const RenderVertical = require("../../../../assets/images/devices/3DRenderVertical.png");
@@ -66,10 +67,15 @@ function OnboardingStepDoYouHaveALedgerDevice({ navigation }: NavigationProps) {
     }, [setSource, setScreen]),
   );
 
+
+  const previousRouteName = usePreviousRouteName();
+  const currentRouteName = useCurrentRouteName();
+  console.log("PREVIOUS", previousRouteName);
+  console.log("CURRENT", currentRouteName);
   return (
     // @ts-expect-error Bindings are wrong…
     <SafeAreaView flex={1}>
-      <TrackScreen category="Onboarding" name="Has Device?" />
+      <TrackScreen category="Onboarding" name="Has Device?" source={previousRouteName} />
       <Flex flex={1} bg="background.main">
         <StyledStatusBar barStyle="light-content" />
         <Box flex={1} justifyContent="center" alignItems="center" mt={8} mx={7}>

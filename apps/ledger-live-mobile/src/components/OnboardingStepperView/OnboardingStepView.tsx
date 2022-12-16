@@ -82,6 +82,7 @@ export function InfoStepView({
     () => !!ctaWarningCheckbox && !hasValidatedCheckbox,
     [ctaWarningCheckbox, hasValidatedCheckbox],
   );
+
   return (
     <>
       {trackPage && isActive && (
