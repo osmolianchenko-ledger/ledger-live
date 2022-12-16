@@ -55,6 +55,7 @@ setSupportedCurrencies([
   "cronos",
   "songbird",
   "flare",
+  "near",
 ]);
 
 for (const k in process.env) setEnvUnsafe(k as EnvName, process.env[k]);
