@@ -68,15 +68,10 @@ import BLUE_LIGHT_validate from "~/renderer/animations/blue/7Validate/data.json"
 
 // NANO FTS
 
-import NANO_FTS_plugAndPinCode from "~/renderer/animations/nanoFTS/enterPIN.json";
 import NANO_FTS_enterPinCode from "~/renderer/animations/nanoFTS/enterPIN.json";
-import NANO_FTS_quitApp from "~/renderer/animations/nanoFTS/allowConnection.json";
-import NANO_FTS_allowManager from "~/renderer/animations/nanoFTS/allowConnection.json";
-import NANO_FTS_openApp from "~/renderer/animations/nanoFTS/allowConnection.json";
+import NANO_FTS_allowConnection from "~/renderer/animations/nanoFTS/allowConnection.json";
 import NANO_FTS_verify from "~/renderer/animations/nanoFTS/verifyAddress.json";
 import NANO_FTS_sign from "~/renderer/animations/nanoFTS/signTransaction.json";
-import NANO_FTS_firmwareUpdating from "~/renderer/animations/nanoFTS/allowConnection.json";
-import NANO_FTS_installLoading from "~/renderer/animations/nanoFTS/allowConnection.json";
 
 /* eslint-enable camelcase */
 
@@ -198,24 +193,24 @@ const nanoSP = {
 
 const nanoFTS = {
   plugAndPinCode: {
-    light: NANO_FTS_plugAndPinCode,
-    dark: NANO_FTS_plugAndPinCode,
+    light: NANO_FTS_enterPinCode,
+    dark: NANO_FTS_enterPinCode,
   },
   enterPinCode: {
     light: NANO_FTS_enterPinCode,
     dark: NANO_FTS_enterPinCode,
   },
   quitApp: {
-    light: NANO_FTS_quitApp,
-    dark: NANO_FTS_quitApp,
+    light: NANO_FTS_allowConnection,
+    dark: NANO_FTS_allowConnection,
   },
   allowManager: {
-    light: NANO_FTS_allowManager,
-    dark: NANO_FTS_allowManager,
+    light: NANO_FTS_allowConnection,
+    dark: NANO_FTS_allowConnection,
   },
   openApp: {
-    light: NANO_FTS_openApp,
-    dark: NANO_FTS_openApp,
+    light: NANO_FTS_allowConnection,
+    dark: NANO_FTS_allowConnection,
   },
   verify: {
     light: NANO_FTS_verify,
@@ -226,12 +221,12 @@ const nanoFTS = {
     dark: NANO_FTS_sign,
   },
   firmwareUpdating: {
-    light: NANO_FTS_firmwareUpdating,
-    dark: NANO_FTS_firmwareUpdating,
+    light: NANO_FTS_allowConnection,
+    dark: NANO_FTS_allowConnection,
   },
   installLoading: {
-    light: NANO_FTS_installLoading,
-    dark: NANO_FTS_installLoading,
+    light: NANO_FTS_allowConnection,
+    dark: NANO_FTS_allowConnection,
   },
 };
 
